@@ -1,10 +1,8 @@
 ---
 layout: post
-title: "You're up and running!"
+title: "Hello World !!!"
 published: true
 ---
-
-Hello World !!!
 
 Este es el primer artículo sobre mi blog técnico. Al final me he decidido por Jekyll. Aunque me gustaba más la idea de hacer el blog con pelican, por eso de seguir trasteando con Python, de momento prefiero la comodidad de no tener que instalar nada en mi máquina y Jekyll + github me dan la convinación perfecta. Jekyll viene integrado en github y puedes postear directamente desde cualquier navegador. 
 
