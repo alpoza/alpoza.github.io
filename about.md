@@ -2,14 +2,21 @@
 layout: page
 title: About
 permalink: /about/
+published: true
 ---
 
-Some information about you!
+Blog personal sobre Desarrollo y Tecnología de Alberto Poza
 
-### More Information
+### Más Information
 
-A place to include any other types of information that you'd like to include about yourself. 
+Más de 15 años de experiencia desarrollando aplicaciones web con distintas tecnologías y lenguajes:
+- Microsoft
+- Java J2EE
+- Spring
+- Groovy
+- Python
+- Javascript
 
-### Contact me
+### Contacto
 
 [email@domain.com](mailto:email@domain.com)
