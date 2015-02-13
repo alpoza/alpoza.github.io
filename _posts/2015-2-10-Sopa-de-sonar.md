@@ -26,7 +26,8 @@ El siguiente comando se usa para desplegar una nueva versión del plugin en desa
 Tambien puedes crear el jar de tu manera normal, copiarlo en el directorio de plugins de sonar y reiniciar sonar con una llamada a restart del Web API de Sonar:
 `curl -v --noproxy localhost -XPOST http://localhost:9000/api/system/restart`
 
-    @TODO: a mi me fallan ambos métodos. Utilizando curl tendremos un error más descriptivo:
+@TODO: a mi me fallan ambos métodos. Utilizando curl tendremos un error más descriptivo:
+
     org.jruby.exceptions.RaiseException: (NoMethodError) undefined method `controllers' for nil:NilClass
             at org.jruby.RubyKernel.method_missing(org/jruby/RubyKernel.java:255)
             at RUBY.method_missing(C:/apps/sonarqube-4.5.2/web/WEB-INF/gems/gems/activesupport-2.3.15/lib/active_support/whiny_nil.rb:52)
