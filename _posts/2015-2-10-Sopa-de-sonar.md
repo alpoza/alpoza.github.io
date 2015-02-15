@@ -53,6 +53,8 @@ Ahora sólo tienes que enlazar el depurador del IDE que utilices en el puerto qu
 
 ## Resolver conflictos con dependencias
 
+http://maven.apache.org/plugins/maven-dependency-plugin/examples/resolving-conflicts-using-the-dependency-tree.html
+
 mvn dependency:tree -Dverbose -Dincludes=org.codehaus.sonar.sslr-squid-bridge:sslr-squid-bridge
 
      --- maven-dependency-plugin:2.8:tree (default-cli) @ java-custom-rules ---
