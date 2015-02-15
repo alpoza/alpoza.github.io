@@ -50,3 +50,13 @@ Dependiendo si utilizas ant, Sonar Runner, Gradle o Maven los pasos son diferent
     mvnDebug sonar:sonar 
     
 Ahora sólo tienes que enlazar el depurador del IDE que utilices en el puerto que te muestre el comando anterior, habitualmente `localhost:8000`.
+
+## Resolver conflictos con dependencias
+
+mvn dependency:tree -Dverbose -Dincludes=org.codehaus.sonar.sslr-squid-bridge:sslr-squid-bridge
+
+     --- maven-dependency-plugin:2.8:tree (default-cli) @ java-custom-rules ---
+     org.sonar.samples:java-custom-rules:sonar-plugin:1.0-SNAPSHOT
+     \- org.codehaus.sonar-plugins.java:sonar-java-plugin:sonar-plugin:2.9.1:provided
+        \- org.codehaus.sonar-plugins.java:java-squid:jar:2.9.1:provided
+           \- org.codehaus.sonar.sslr-squid-bridge:sslr-squid-bridge:jar:2.4:provided
