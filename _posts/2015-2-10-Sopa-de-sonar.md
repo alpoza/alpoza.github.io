@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Sopa de Sonar"
-published: false
+published: true
 Category: dev
 Tags: sonar
 Authors: Alberto Poza
