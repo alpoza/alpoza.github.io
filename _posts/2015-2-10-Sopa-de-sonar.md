@@ -53,8 +53,7 @@ Si queréis ver la ayuda de lo que se puede hacer con sonar-dev-maven-plugin:
 
 ## Arrancar maven en debug Mode
 
-Otra de las cosas que te puede tocar hacer es depurar el código cuando se ejecuta el analizador batch
-http://docs.sonarqube.org/display/SONAR/Debugging
+Otra de las cosas que te puede tocar hacer es depurar el código cuando se ejecuta el analizador batch. La informa oficial para depurar se puede encontrar en [Sonar Debugging](http://docs.sonarqube.org/display/SONAR/Debugging)
 
 Dependiendo si utilizas ant, Sonar Runner, Gradle o Maven los pasos son diferentes. La manera más cómoda es utilizar maven porque sólo requiere esta línea de comando:
 
@@ -63,10 +62,9 @@ Dependiendo si utilizas ant, Sonar Runner, Gradle o Maven los pasos son diferent
 Ahora sólo tienes que enlazar el depurador del IDE que utilices en el puerto que te muestre el comando anterior, habitualmente `localhost:8000`.
 
 ## Resolver conflictos con dependencias
+La manera más cómoda es utilizar el plugin de maven para eclipse, abrir el `pom.xml` correspondiente y ver la lengueta dependency hierarchy. Si no se tiene a mano eclipse siempre podemos utilizar maven directamente para ver el [árbol de dependencias](http://maven.apache.org/plugins/maven-dependency-plugin/examples/resolving-conflicts-using-the-dependency-tree.html):
 
-http://maven.apache.org/plugins/maven-dependency-plugin/examples/resolving-conflicts-using-the-dependency-tree.html
-
-mvn dependency:tree -Dverbose -Dincludes=org.codehaus.sonar.sslr-squid-bridge:sslr-squid-bridge
+    mvn dependency:tree -Dverbose -Dincludes=org.codehaus.sonar.sslr-squid-bridge:sslr-squid-bridge
 
      --- maven-dependency-plugin:2.8:tree (default-cli) @ java-custom-rules ---
      org.sonar.samples:java-custom-rules:sonar-plugin:1.0-SNAPSHOT
