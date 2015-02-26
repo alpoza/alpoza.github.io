@@ -53,7 +53,7 @@ Si queréis ver la ayuda de lo que se puede hacer con sonar-dev-maven-plugin:
 
 ## Arrancar maven en debug Mode
 
-Otra de las cosas que te puede tocar hacer es depurar el código cuando se ejecuta el analizador batch. La informa oficial para depurar se puede encontrar en [Sonar Debugging](http://docs.sonarqube.org/display/SONAR/Debugging)
+Otra de las cosas que te puede tocar hacer es depurar el código cuando se ejecuta el analizador batch. La información oficial para depurar se puede encontrar en [Sonar Debugging](http://docs.sonarqube.org/display/SONAR/Debugging)
 
 Dependiendo si utilizas ant, Sonar Runner, Gradle o Maven los pasos son diferentes. La manera más cómoda es utilizar maven porque sólo requiere esta línea de comando:
 
