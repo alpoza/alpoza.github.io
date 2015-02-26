@@ -7,6 +7,7 @@ Tags: sonar
 Authors: Alberto Poza
 Summary: Si no te gusta la sopa... toma dos platos
 ---
+**Si no te gusta la sopa... toma dos platos**
 
 Ahora mismo estoy involucrado en varios frentes relacionados con SonarQube:
 - Migración de la plataforma Sonarqube 4.1 a 4.5.2 LTS
