@@ -40,7 +40,7 @@ Tambien puedes crear el jar de tu manera normal, copiarlo en el directorio de pl
             at RUBY.call(file:/C:/apps/sonarqube-4.5.2/lib/server/jruby-rack-1.1.13.2.jar!/rack/adapter/rails.rb:39)
             at RUBY.call(file:/C:/apps/sonarqube-4.5.2/lib/server/jruby-rack-1.1.13.2.jar!/rack/handler/servlet.rb:22)
 
-Por otro lado utilizando la versión 1.7 de sonar-dev-maven-plugin, teóficamente era posible instalar el plugin y lanzar la web en un único comando:
+Por otro lado utilizando la versión 1.7 de sonar-dev-maven-plugin, teóricamente era posible instalar el plugin y lanzar la web en un único comando:
 
     mvn install org.codehaus.sonar:sonar-dev-maven-plugin:1.7:start-war -Dsonar.runtimeVersion=4.5.2
     
