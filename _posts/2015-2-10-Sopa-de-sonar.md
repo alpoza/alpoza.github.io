@@ -8,12 +8,12 @@ Authors: Alberto Poza
 Summary: Si no te gusta la sopa... toma dos platos
 ---
 
-mvn help:describe -DgroupId=org.codehaus.sonar -DartifactId=sonar-dev-maven-plugin -Ddetail=true -Dversion=1.7
-mvn help:describe -DgroupId=org.codehaus.sonar -DartifactId=sonar-dev-maven-plugin -Ddetail=true -Dversion=1.8
+Ahora mismo estoy involucrado en varios frentes relacionados con SonarQube:
+- Migración de la plataforma Sonarqube 4.1 a 4.5.2 LTS
+- Compatibilidad de los plugins implementados en 4.1
+- Desarrollo de nuevas reglas
 
-
-
-mvn install org.codehaus.sonar:sonar-dev-maven-plugin:1.7:start-war -Dsonar.runtimeVersion=4.5.2 -Dlicense.skip=true
+Durante el desarrollo de estas tareas han surgido algunas dificultades que con la ayuda de google hemos ido solucionando y que dejo aquí anotadas por si fueran de utilidad futura.
 
 ## Plugin Hot Deploy
 
@@ -39,6 +39,17 @@ Tambien puedes crear el jar de tu manera normal, copiarlo en el directorio de pl
             at RUBY.serve_rails(file:/C:/apps/sonarqube-4.5.2/lib/server/jruby-rack-1.1.13.2.jar!/rack/adapter/rails.rb:34)
             at RUBY.call(file:/C:/apps/sonarqube-4.5.2/lib/server/jruby-rack-1.1.13.2.jar!/rack/adapter/rails.rb:39)
             at RUBY.call(file:/C:/apps/sonarqube-4.5.2/lib/server/jruby-rack-1.1.13.2.jar!/rack/handler/servlet.rb:22)
+
+Por otro lado utilizando la versión 1.7 de sonar-dev-maven-plugin, teóficamente era posible instalar el plugin y lanzar la web en un único comando:
+
+    mvn install org.codehaus.sonar:sonar-dev-maven-plugin:1.7:start-war -Dsonar.runtimeVersion=4.5.2
+    
+Lamentablemente intenta descargar `[get] Error getting http://dist.sonar.codehaus.org/sonar-4.5.2.zip` mientras que en [el servidor de distribuciones](http://dist.sonar.codehaus.org/) el fichero para la versión 4.5.2 se llama `sonarqube-4.5.2.zip` 
+
+Si queréis ver la ayuda de lo que se puede hacer con sonar-dev-maven-plugin:
+
+    mvn help:describe -DgroupId=org.codehaus.sonar -DartifactId=sonar-dev-maven-plugin -Ddetail=true -Dversion=1.7
+    mvn help:describe -DgroupId=org.codehaus.sonar -DartifactId=sonar-dev-maven-plugin -Ddetail=true -Dversion=1.8
 
 ## Arrancar maven en debug Mode
 
