@@ -9,10 +9,10 @@ Summary: Modelo de ramas y worflow para empezar y no morir en el intento
 ---
 **Modelo de ramas y worflow para empezar a usar git y no morir en el intento**
 
-## Soy nuevo en git
 Si eres nuevo en git habrás oido hablar de sus bondades a la hora de trabajar con ramas, te habrán contado su facilidad para hacer merges automáticos, habrás visto que practicamente todos los proyectos open source están en [github](http://githab.com) y seguro que te habrán sugerido empezar a trabajar con git en lugar de cvs o svn.
 
-Pero comenzar a utilizar git en un equipo de trabajo que nunca antes lo había utilizado, tiene una gran barrera de entrada:
+## Soy nuevo en git
+Comenzar a utilizar git en un equipo de trabajo que nunca antes lo había utilizado, tiene una gran barrera de entrada:
 
 - *aprender el funcionamiento y los comandos básicos*. Con cvs tenemos commit, update, branch, merge,... y todos estos comandos van contra el servidor central. En git tenemos muchas más comandos: clone, commit, push, pull, fetch, merge, rebase, reset, checkout,... algunos trabajan en local y otros en remoto, contra uno o varios repositorios.
 - *workflow". El modo de trabajo con cvs es sencillo: actualizas o descargas en local lo que haya en el HEAD o BRANCH en el que tengas que trabajar y vas haciendo commits de los fuentes que se envian al respositorio central. Si hay conflictos en algún fichero al hacer un update o un commit, cvs bloquea antes de subir, resuelves el conflicto y lo vuelves a intentar. En git, aunque básicamente tienes que hacer lo mismo (actulizar tu copia local y subir tus cambios al repositorio/os), la forma de trabajo suele ser distinta: igualmente actualizas tu copia local con los cambios que haya en el repositorio, pero por norma general creas una nueva rama a partir de la principal. Los commits los haces en local y finalmente subes los cambios al respositorio, pero como estás en una rama tienes que hacer un merge con la principal. El modo en el que organices y pactes con el equipo de desarrollo esta "gestión" de ramas y el workflow a seguir, puede marcar la diferencia entre la excesiva sencillez y la extrema burocracia, por lo que hay que buscar el equilibrio para que todos nos sintamos confortables.
