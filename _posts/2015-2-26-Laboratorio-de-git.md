@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Laboratorio de Git"
-published: false
+published: true
 Category: dev
 Tags: git
 Authors: Alberto Poza
