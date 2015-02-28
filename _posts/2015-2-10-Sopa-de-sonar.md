@@ -26,7 +26,7 @@ El siguiente comando se usa para desplegar una nueva versión del plugin en desa
 
     mvn package org.codehaus.sonar:sonar-dev-maven-plugin::upload -DsonarHome=/path/to/server/home -DsonarUrl=http://localhost:9000
 
-Tambien puedes crear el jar de tu manera normal, copiarlo en el directorio de plugins de sonar (con algún plugin de despliegue de maven) y reiniciar sonar con una llamada a restart del Web API de Sonar:
+También puedes crear el jar de tu manera normal, copiarlo en el directorio de plugins de sonar (con algún plugin de despliegue de maven) y reiniciar sonar con una llamada a restart del Web API de Sonar:
 `curl -v --noproxy localhost -XPOST http://localhost:9000/api/system/restart`
 
 @TODO: a mi me fallan ambos métodos. Utilizando curl tendremos un error más descriptivo:
