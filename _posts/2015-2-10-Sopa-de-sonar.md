@@ -18,13 +18,15 @@ Durante el desarrollo de estas tareas han surgido algunas dificultades que con l
 
 ## Plugin Hot Deploy
 
+Algo que te va a suceder, si estás probando un plugin para SonarQube, es *desplegar el plugin en el servidor* para poder probarlo. Esto implica, generar el jar, copiar el jar en el directorio de extensiones de SonarQube y parar y arrancar el servidor. Así que busqué formas de automatizar y acelerar este proceso ya que lo normal es tener que hacerlo en numerosas ocasiones durante el ciclo de vida del desarrollo del plugin.
+
 Desde SonarQube 4.3 se permite un reinicio rápido del servidor cuando está configurado para arrancar en "development mode". Esto se indica incluyendo el parámetro `sonar.dev=true` en el fichero `conf/sonar.properties`. 
 
 El siguiente comando se usa para desplegar una nueva versión del plugin en desarrollo. Es más rápido que reiniciar el servidor de la manera standard ya que el JRuby environment no se recarga. Ejecuta el siguiente comando desde el directorio donde reside el pom.xml del plugin:
 
     mvn package org.codehaus.sonar:sonar-dev-maven-plugin::upload -DsonarHome=/path/to/server/home -DsonarUrl=http://localhost:9000
 
-Tambien puedes crear el jar de tu manera normal, copiarlo en el directorio de plugins de sonar y reiniciar sonar con una llamada a restart del Web API de Sonar:
+Tambien puedes crear el jar de tu manera normal, copiarlo en el directorio de plugins de sonar (con algún plugin de despliegue de maven) y reiniciar sonar con una llamada a restart del Web API de Sonar:
 `curl -v --noproxy localhost -XPOST http://localhost:9000/api/system/restart`
 
 @TODO: a mi me fallan ambos métodos. Utilizando curl tendremos un error más descriptivo:
@@ -63,7 +65,9 @@ Dependiendo si utilizas ant, Sonar Runner, Gradle o Maven los pasos son diferent
 Ahora sólo tienes que enlazar el depurador del IDE que utilices en el puerto que te muestre el comando anterior, habitualmente `localhost:8000`.
 
 ## Resolver conflictos con dependencias
-La manera más cómoda es utilizar el plugin de maven para eclipse, abrir el `pom.xml` correspondiente y ver la lengueta dependency hierarchy. Si no se tiene a mano eclipse siempre podemos utilizar maven directamente para ver el [árbol de dependencias](http://maven.apache.org/plugins/maven-dependency-plugin/examples/resolving-conflicts-using-the-dependency-tree.html):
+Para implementar un plugin en el que añadir nuevas reglas de validación en Java (u otros lenguajes), tienes que utilizar unas cuantas librerías que proporciona SonarQube, de las que puede haber varias versiones de cada una de ellas y pueden existir incompatibilidades entre ellas y/o con los propias librerias core de la distribución. Si además estás migrando un plugin existente para una versión anterior de SonarQube, que ya utilizan sus propias versiones de las librerías, el caos puede llegar cuando menos te lo esperes si no tienes cuidado.
+
+Si estás utilizando maven, la manera más cómoda para ver las versiones de cada librería que están utilizando en tu proyecto es utilizar el plugin de maven para eclipse, abrir el `pom.xml` correspondiente y ver la lengueta dependency hierarchy. Si no se tiene a mano eclipse siempre podemos utilizar maven directamente para ver el [árbol de dependencias](http://maven.apache.org/plugins/maven-dependency-plugin/examples/resolving-conflicts-using-the-dependency-tree.html):
 
     mvn dependency:tree -Dverbose -Dincludes=org.codehaus.sonar.sslr-squid-bridge:sslr-squid-bridge
 
