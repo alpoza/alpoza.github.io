@@ -22,3 +22,18 @@ El modelo ideal no existe, depende de las características del proyecto y de la 
 Hay un excelente artículo describiendo [gitlab workflow](https://about.gitlab.com/2014/09/29/gitlab-flow/), con el que, aunque está orientado a trabajar con [gitlab](http://gitlab.org), puedes salir con las ideas claras.
 
 La idea es tener la rama master como rama principal, o línea base y crear una rama por cada feature que desees añadir al desarrollo. La rama master es la que estará asociada a tu posible sitema de Integración Continua y estará [protegida](http://doc.gitlab.com/ee/permissions/permissions.html) para que no se pueda hacer un push directo a esta rama. Cada vez que termines una feature se deberá hacer un [merge request](https://gitlab.com/gitlab-org/gitlab-ce/merge_requests) para integrarla con la rama master y esta solicitud de merge request servirá como punto de unión, para hacer un review con el resto del equipo, como documentación de la resolución de cada feature, etc.
+
+### Environment branches
+Puede que necesites tener ramas para saber lo que tienes en el entorno de pre-producción y producción. Para ello el modelo __gitlab-flow__ recomienda crear una rama para cada entorno y realizar un `merge request` desde la rama master a pre o pro cuando se necesite.
+
+### Release branches
+Si tienes que mantener varias release de tu proyecto, puedes echar un ojo al apartado correpondiente en __gitlab-flow__.
+
+### Trabajar con los Issues de gitlab
+Otra buena práctica recomendad por el modelo __gitlab-flow__ es trabajar con el sistema de issues que proporciona la herramienta. La idea es crear un Issues por cada feature, hotfix, etc. con el que trabajes y linkar el issue ID en cada commit o merge request que ralices relacionado con ese issue. De esta manera se pueden trazar los cambios realizados en el software con los requisitos y correcciones realizados.
+
+### Otros
+* [Semantic Versioning] (http://semver.org/) 
+* Sistema de votaciones para __merge requests__
+* [Utilizar 'commit messages' inteligentes ](http://tbaggery.com/2008/04/19/a-note-about-git-commit-messages.html)
+
