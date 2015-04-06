@@ -7,7 +7,7 @@ Tags: REST, spring boot
 Authors: Alberto Poza
 Summary: Como utilizar spring boot para crear servicios REST
 ---
-**springbootling REST web services**
+**Utilizando spring boot para crear servicios REST**
 
 ## Use Tomcat 7 or another 3.0 compliant application server
 Según [Embedded Servlet containers] (http://docs.spring.io/spring-boot/docs/current/reference/html/howto-embedded-servlet-containers.html), Spring boot utiliza Tomcat 8 por defecto como embedded container. Si necesitas usar Jetty o Undertow tienes que configurarlos explicitamente según la guía. Si además necesitas desplegar el servicio en Tomcat 7 (porque estés usando Java 1.6 por ejemplo) o WebSphere Liberty Profile (WPL para los amigos) porque al final vas a desplegar en un WAS, si estás utilizando starters POMs and parents es tan sencillo como añadir 
