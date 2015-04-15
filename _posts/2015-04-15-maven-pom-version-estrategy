@@ -3,7 +3,7 @@ layout: post
 title: "Strategia para cambiar el id de versión para proyectos maven"
 published: true
 Category: dev
-Tags: REST, spring boot
+Tags: maven, jenkins, versions
 Authors: Alberto Poza
 Summary: distintas formas de versionar proyectos maven
 ---
