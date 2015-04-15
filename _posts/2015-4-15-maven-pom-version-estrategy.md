@@ -7,7 +7,6 @@ Tags: maven, jenkins, versions
 Authors: Alberto Poza
 Summary: distintas formas de versionar proyectos maven
 ---
-*Estrategia para cambiar el id de versión para proyectos maven**
 
 ##Utilizando jenkins
 con la ayuda de build-helper maven plugin y versions podemos añadir el build_number a la versión del proyecto:
