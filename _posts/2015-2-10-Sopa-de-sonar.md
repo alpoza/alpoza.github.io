@@ -95,3 +95,18 @@ o en Sonar Runner:
     sonar.issue.ignore.block.e1.endBlockRegexp=@SonarIgnorexpEND
     sonar.issue.ignore.block.e2.beginBlockRegexp=@GeneralIgnorexpINI
     sonar.issue.ignore.block.e2.endBlockRegexp=@GeneralIgnorexpEND
+
+Si queremos excluir ficheros autogenerados:
+
+    <sonar.exclusions>
+        file:**/src-gen/**,
+        file:**/emf-gen/**,
+        file:**/example/**,
+        file:**/tests/**,
+        **/*RuntimeModule.java,
+        **/*UiModule.java,
+        **/*XcoreReader.java,
+        **/*UiExamples.java,
+        **/*TypeSystemGen*.java,
+        **/*StandaloneSetup*.java
+    </sonar.exclusions>
