@@ -76,3 +76,22 @@ Si estás utilizando maven, la manera más cómoda para ver las versiones de cad
      \- org.codehaus.sonar-plugins.java:sonar-java-plugin:sonar-plugin:2.9.1:provided
         \- org.codehaus.sonar-plugins.java:java-squid:jar:2.9.1:provided
            \- org.codehaus.sonar.sslr-squid-bridge:sslr-squid-bridge:jar:2.4:provided
+
+## Exclusions
+Mulitcriteria exclusions vía Maven:
+
+    <properties>
+            <sonar.issue.ignore.multicriteria>e1,e2</sonar.issue.ignore.multicriteria>
+            <sonar.issue.ignore.multicriteria.e1.ruleKey>squid:key</sonar.issue.ignore.multicriteria.e1.ruleKey>
+            <sonar.issue.ignore.multicriteria.e1.resourceKey>**/*Nombre.java</sonar.issue.ignore.multicriteria.e1.resourceKey>
+            <sonar.issue.ignore.multicriteria.e2.ruleKey>squid:otraKey</sonar.issue.ignore.multicriteria.e2.ruleKey>
+            <sonar.issue.ignore.multicriteria.e2.resourceKey>**/OtroNombre.java</sonar.issue.ignore.multicriteria.e2.resourceKey>
+    </properties>
+
+o en Sonar Runner:
+
+    sonar.issue.ignore.block=e1,e2
+    sonar.issue.ignore.block.e1.beginBlockRegexp=@SonarIgnorexpINI
+    sonar.issue.ignore.block.e1.endBlockRegexp=@SonarIgnorexpEND
+    sonar.issue.ignore.block.e2.beginBlockRegexp=@GeneralIgnorexpINI
+    sonar.issue.ignore.block.e2.endBlockRegexp=@GeneralIgnorexpEND
