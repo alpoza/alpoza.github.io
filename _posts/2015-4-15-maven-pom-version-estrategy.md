@@ -16,9 +16,9 @@ El problema es que el comando anterior modifica la versión en el pom.xml. Como 
 
 Una posible solución sería utilizar una varible en la sección properties del pom.xml parent que se llame por ejemplo project.version:
 
-	<version>0.0-SNAPSHOT</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<properties>
-		<project.deploy.version>${project.version}</project.deploy.version>
+		<project.deploy.version>0.0.1-SNAPSHOT</project.deploy.version>
 	</properties>
 
 En cada módulo asignamos la versión utilizamos esta propiedad:
