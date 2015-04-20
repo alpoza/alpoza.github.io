@@ -23,9 +23,7 @@ Una posible solución sería utilizar una varible en la sección properties del 
 
 En cada módulo asignamos la versión utilizamos esta propiedad:
 
-```xml
-<version>${project.deploy.version}</version>
-```
+	<version>${project.deploy.version}</version>
 
 De esta forma la versión del parent es 0.0-SNAPSHOT así como la de todos los módulos por defecto, pero si al hacer la build asignamos un valor a la variable mediante `-Dproject.deploy.version=0.0-${BUILD_NUMBER}` tendremos una versión diferene para cada uno de los módulos. Podemos ayudarnos de build-helper maven plugin para la major minor version la obtenga del pom.xml parent: 
 `mvn build-helper:parse-version clean package -Dproject.deploy.version=${parsedVersion.majorVersion}.\${parsedVersion.minorVersion}.\${parsedVersion.incrementalVersion}-${BUILD_NUMBER}`
