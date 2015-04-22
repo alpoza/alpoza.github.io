@@ -17,3 +17,20 @@ Según [Embedded Servlet containers] (http://docs.spring.io/spring-boot/docs/cur
 en los properties de tu __pom.xml__
 
 Para que te funcione dentro de eclipse, quizá tengas que usar el [siguiente truco] (http://stackoverflow.com/questions/27447077/how-to-configure-spring-boot-1-2-0-for-servlet-3-0-and-have-m2e-set-eclipse-face) 'Properties -> Project Facets, uncheck Dynamic Web Module, then Ok or Apply. Then do Maven->Update Project.' para que tu __The Dynamic Web Module version__ se actualice a la versión 3.0 y te deje incluir el proyecto en los servidores.
+
+Parece que aunque utilices tomcat 7 y compiles para Java 1.6, hay un problema con las librerías JPA que utiliza spring boot (al menos en la versión 1.2.1-RELEASE y 1.2.2-RELEASE que yo ye probado) que causan un [problema con Java 1.6](https://github.com/spring-projects/spring-boot/issues/2347):
+  Updating JPA spring boot project to 1.2.1-RELEASE will cause a java.lang.UnsupportedClassVersionError when running with Java 6:
+
+El workarround que proponen es excluir la librería de spring-boot-starter-data-jpa:
+```
+  <dependency>
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-data-jpa</artifactId>
+      <exclusions>
+          <exclusion>
+              <groupId>javax.transaction</groupId>
+              <artifactId>javax.transaction-api</artifactId>
+          </exclusion>
+      </exclusions>
+  </dependency>
+```
