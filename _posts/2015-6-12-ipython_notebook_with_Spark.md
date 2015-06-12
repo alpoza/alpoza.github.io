@@ -1,3 +1,13 @@
+---
+layout: post
+title: "ipython notebooks con spark"
+published: true
+Category: dev
+Tags: python, ipython, notebooks, spark, edx
+Authors: Alberto Poza
+Summary: Configurar notebooks de ipython para ejecutar spark
+---
+
 Estoy haciendo el curso (BerkeleyX: CS100.1x Introduction to Big Data with Apache Spark)[https://courses.edx.org/courses/BerkeleyX/CS100.1x/1T2015/courseware]
 
 Bastante interesante si no conoces Spark y muy introductorio si te gusta todo lo relacionado con Big Data. El problema es que para las prácticas de laboratorio utilizan una imagen que se carga mediante Vagrant.
@@ -11,10 +21,11 @@ Primer problema: a la hora de importar un notebook salta un error 500... WTF
 Como no me apetece ivestigar, creo que lo más rápido es reinstalarme ipython con las últimas versiones.
 Como ya tengo virtualenv y virtualenvwrapper, imprescindible para aislar las dependencias de cada proyecto python, nos ponemos manos a la obra:
 
-mkvirtualenv spark
-workon spark
-pip install ipython[All]
-ipython notebook
+  mkvirtualenv spark
+  workon spark
+  pip install ipython[All]
+  ipython notebook
+  
 http://localhost:8888
 
 importamos un notebook y... Funciona !!! :)
