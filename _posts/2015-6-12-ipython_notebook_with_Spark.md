@@ -31,3 +31,7 @@ http://localhost:8888
 importamos un notebook y... Funciona !!! :)
 
 ##Instalar spark
+
+##Enganchar spark con ipython notebooks
+[base](https://districtdatalabs.silvrback.com/getting-started-with-spark-in-python)
+[enhaced](http://blog.cloudera.com/blog/2014/08/how-to-use-ipython-notebook-with-apache-spark/)
