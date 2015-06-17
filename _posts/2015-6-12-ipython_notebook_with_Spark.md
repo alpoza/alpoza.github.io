@@ -36,5 +36,32 @@ Descargar la versión apropiada desde la [página de descargas de Spark] (https:
 Una vez tengamos el fichero lo descomprimimos en un directorio a nuestra elección. Podemos probar que funciona correctamente lanzando ´bin/pyspark´.
 
 ##Enganchar spark con ipython notebooks
-Básicamente he seguido este documento [base](https://districtdatalabs.silvrback.com/getting-started-with-spark-in-python). 
-[enhaced](http://blog.cloudera.com/blog/2014/08/how-to-use-ipython-notebook-with-apache-spark/)
+Básicamente he seguido este documento [base](https://districtdatalabs.silvrback.com/getting-started-with-spark-in-python):
+
+Crear un profile iPython notebook
+  ipython profile create spark
+
+Crear un fichero en el directorio creado para el profile 
+$HOME/.ipython/profile_spark/startup/00-pyspark-setup.py con lo siguiente:
+
+  import os
+  import sys
+  
+  # Configure the environment
+  if 'SPARK_HOME' not in os.environ:
+      os.environ['SPARK_HOME'] = '/srv/spark'
+  
+  # Create a variable for our root path
+  SPARK_HOME = os.environ['SPARK_HOME']
+  
+  # Add the PySpark/py4j to the Python Path
+  sys.path.insert(0, os.path.join(SPARK_HOME, "python", "build"))
+  sys.path.insert(0, os.path.join(SPARK_HOME, "python"))
+
+Arrancar Ipython notebook con el profile creado:
+
+  ipython notebook --profile spark
+
+Para que se cargue automáticamente el SparkContext al arrancar Ipython notebook se seguido [este documento](http://blog.cloudera.com/blog/2014/08/how-to-use-ipython-notebook-with-apache-spark/):
+
+
