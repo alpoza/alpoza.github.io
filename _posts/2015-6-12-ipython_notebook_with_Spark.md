@@ -31,7 +31,10 @@ http://localhost:8888
 importamos un notebook y... Funciona !!! :)
 
 ##Instalar spark
+Descargar la versión apropiada desde la [página de descargas de Spark] (https://spark.apache.org/downloads.html). Yo me bajé spark-1.3.1-bin-hadoop2.6.tgz que traducido es spark 1.3.1 con hadoop 2.6 :). A día de hoy está la versión 1.4.0 de spark que viene con [Spark R] (https://spark.apache.org/docs/latest/api/R/index.html).
+
+Una vez tengamos el fichero lo descomprimimos en un directorio a nuestra elección. Podemos probar que funciona correctamente lanzando ´bin/pyspark´.
 
 ##Enganchar spark con ipython notebooks
-[base](https://districtdatalabs.silvrback.com/getting-started-with-spark-in-python)
+Básicamente he seguido este documento [base](https://districtdatalabs.silvrback.com/getting-started-with-spark-in-python). 
 [enhaced](http://blog.cloudera.com/blog/2014/08/how-to-use-ipython-notebook-with-apache-spark/)
