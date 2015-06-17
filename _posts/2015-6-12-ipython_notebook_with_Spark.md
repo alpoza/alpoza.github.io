@@ -5,7 +5,7 @@ published: true
 Category: dev
 Tags: python, ipython, notebooks, spark, edx
 Authors: Alberto Poza
-Summary: Configurar notebooks de ipython para ejecutar spark
+Summary: Configurar notebooks de ipython para utilizar spark en windows
 ---
 **big big data**
 Estoy haciendo el curso `[BerkeleyX: CS100.1x Introduction to Big Data with Apache Spark](https://courses.edx.org/courses/BerkeleyX/CS100.1x/1T2015/courseware)
@@ -58,10 +58,14 @@ $HOME/.ipython/profile_spark/startup/00-pyspark-setup.py con lo siguiente:
   sys.path.insert(0, os.path.join(SPARK_HOME, "python", "build"))
   sys.path.insert(0, os.path.join(SPARK_HOME, "python"))
 
-Arrancar Ipython notebook con el profile creado:
+Para que se cargue automáticamente el SparkContext al arrancar Ipython notebook me he basado en  [este documento](http://blog.cloudera.com/blog/2014/08/how-to-use-ipython-notebook-with-apache-spark/). Basicamente es añadir estas líneas al final del fichero anterior:
+  sys.path.insert(0, os.path.join(SPARK_HOME, 'python/lib/py4j-0.8.1-src.zip'))
+  execfile(os.path.join(SPARK_HOME, 'python/pyspark/shell.py'))
+
+Ya podemoa arrancar Ipython notebook con el profile creado:
 
   ipython notebook --profile spark
 
-Para que se cargue automáticamente el SparkContext al arrancar Ipython notebook se seguido [este documento](http://blog.cloudera.com/blog/2014/08/how-to-use-ipython-notebook-with-apache-spark/):
-
-
+Un problemilla que me ha surgido al realizar las prácticas es que matplotlib no funciona correctamente en el virtualenv. Parece ser que es la [incidencia está aun abierta] (https://github.com/pypa/virtualenv/issues/93), pero han encontrado un workarround que consiste en añadir dos enviroment variables en el fichero activate.bat del virtualenv que estemos utilizando, ajustando correctamente los directorios a nuestra instalación de python, en mi caso:
+  set TCL_LIBRARY=C:\apps\Anaconda\tcl\tcl8.5
+  set TK_LIBRARY=C:\apps\Anaconda\tcl\tk8.5
