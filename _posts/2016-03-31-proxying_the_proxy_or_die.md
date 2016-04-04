@@ -34,5 +34,5 @@ Summary: Configurando el proxy para pasar por el proxy
   
   Note that if you use OpenSSH sshd server, the server's GatewayPorts option needs to be enabled (set to yes or clientspecified) for this to work (check file /etc/ssh/sshd_config on the server). Otherwise (default value for this option is no), the server will always force the port to be bound on the loopback interface only.
 
-Despues de reiniciar el servicio ya podemos arrancar nuestro tunel indicando que queremos que escuche en todas las interfaces: ssh -R 0.0.0.0:8088:localhost:8089 -N root@example.com
+  Despues de reiniciar el servicio ya podemos arrancar nuestro tunel indicando que queremos que escuche en todas las interfaces: ssh -R 0.0.0.0:8088:localhost:8089 -N root@example.com
 esto es: si hacemos un export http_proxy=http://example.com:8088 todos los servicios que utilicen esa variable para establecer el proxy enviaran las peticiones http mediante el tunel a nuestra máquina local en el puerto 8089, en el que deberá estar escuchando nuestro proxy (cntlm) que a su vez remete las peticiones al proxy corporativo.
